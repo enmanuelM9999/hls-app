@@ -5,12 +5,14 @@ const cors = require('cors')
 const app = express()
 app.use(cors())
 app.get('/', (req, res) => {
-  res.send(` <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  res.send(` 
+  jojo
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <!-- Or if you want a more recent alpha version -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
   <video id="video"></video>
   <script>
-      var video = document.getElementById('video');
+      var video = document.getElementById('videoo');
       var videoSrc = 'http://190.107.19.188/hls/live/output.m3u8';
       if (Hls.isSupported()) {
           var hls = new Hls();
