@@ -6,6 +6,7 @@ const app = express()
 app.use(cors())
 app.get('/', (req, res) => {
   res.send(` 
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   jojo
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <!-- Or if you want a more recent alpha version -->
