@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
   <video id="video"></video>
   <script>
-      var video = document.getElementById('videoo');
+      var video = document.getElementById('video');
       var videoSrc = 'http://190.107.19.188/hls/live/output.m3u8';
       if (Hls.isSupported()) {
           var hls = new Hls();
@@ -40,6 +40,9 @@ app.get('/', (req, res) => {
   `)
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.set('port', process.env.PORT || port);
+
+// Starting
+app.listen(app.get('port'), () => {
+    console.log('Server is in port', app.get('port'));
+});
